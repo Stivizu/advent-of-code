@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 import static com.stevecorp.codingcontest.adventofcode.common.InputReader.parseFile;
 
-public class SolutionA {
+public class Exercise1 {
 
     public static void main(final String... args) {
         final int goal = 2020;
