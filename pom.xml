@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.stevecorp.codecontest</groupId>
+    <artifactId>advent-of-code-2020</artifactId>
+    <version>1.0.0</version>
+
+    <properties>
+        <!-- GENERAL PROPERTIES -->
+        <java.version>14</java.version>
+        <character.encoding>UTF-8</character.encoding>
+        <!-- DEPENDENCY VERSIONS -->
+        <!-- PLUGIN VERSIONS -->
+        <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
+        <maven.resources.plugin.version>3.1.0</maven.resources.plugin.version>
+    </properties>
+
+    <dependencies>
+    </dependencies>
+
+    <build>
+        <resources>
+            <!-- Enable resource filtering -->
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <!-- Maven compiler and resources plugins -->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${character.encoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>${maven.resources.plugin.version}</version>
+                <configuration>
+                    <encoding>${character.encoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    
+</project>
