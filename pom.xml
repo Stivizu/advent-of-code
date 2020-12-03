@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.stevecorp.codecontest</groupId>
-    <artifactId>advent-of-code-2020</artifactId>
+    <artifactId>advent-of-code</artifactId>
     <version>1.0.0</version>
 
     <properties>
