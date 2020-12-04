@@ -13,12 +13,18 @@
         <java.version>14</java.version>
         <character.encoding>UTF-8</character.encoding>
         <!-- DEPENDENCY VERSIONS -->
+        <commons.version>3.11</commons.version>
         <!-- PLUGIN VERSIONS -->
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
         <maven.resources.plugin.version>3.1.0</maven.resources.plugin.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
