@@ -2,17 +2,12 @@ package com.stevecorp.codingcontest.adventofcode._007;
 
 import java.util.AbstractMap.SimpleEntry;
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import static com.stevecorp.codingcontest.adventofcode.common.InputReader.group;
-import static com.stevecorp.codingcontest.adventofcode.common.InputReader.parseFile;
 import static com.stevecorp.codingcontest.adventofcode.common.InputReader.parseFileMap;
 import static com.stevecorp.codingcontest.adventofcode.common.InputReader.reverseMap;
 
