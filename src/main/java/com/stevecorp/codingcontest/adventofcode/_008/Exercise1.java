@@ -1,11 +1,9 @@
 package com.stevecorp.codingcontest.adventofcode._008;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.function.Function;
-import java.util.stream.Collectors;
 
 import static com.stevecorp.codingcontest.adventofcode.common.InputReader.parseFile;
 
@@ -26,8 +24,8 @@ public class Exercise1 {
         exercise1(parseFile("challenges/008/input.txt", MAPPER), true);
     }
 
-    public static List<Integer> exercise1(final List<Integer[]> input, final boolean printAccumulatorValue) {
-        final List<Integer> visitedIndexes = new ArrayList<>();
+    public static Set<Integer> exercise1(final List<Integer[]> input, final boolean printAccumulatorValue) {
+        final Set<Integer> visitedIndexes = new HashSet<>();
         int accumulatorValue = 0;
         int currentIndex = 0;
         while (!visitedIndexes.contains(currentIndex)) {

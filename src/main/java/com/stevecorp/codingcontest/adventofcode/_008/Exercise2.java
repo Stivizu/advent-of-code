@@ -7,8 +7,8 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import static com.stevecorp.codingcontest.adventofcode.common.InputReader.parseFile;
 import static com.stevecorp.codingcontest.adventofcode._008.Exercise1.exercise1;
+import static com.stevecorp.codingcontest.adventofcode.common.InputReader.parseFile;
 
 public class Exercise2 {
 
@@ -32,7 +32,7 @@ public class Exercise2 {
                 .filter(index -> JMP_OR_NOP.contains(input.get(index)[0]))
                 .sorted(Comparator.reverseOrder())
                 .collect(Collectors.toList());
-        System.out.println("Indexes of JMP and NOP operations from exercise 1 (reverse numerically sorted):" + jmpsAndNopsFromExercise1Path);
+        System.out.println("Indexes of JMP and NOP operations from exercise 1 (reverse numerically sorted): " + jmpsAndNopsFromExercise1Path);
         final Integer indexToFlip = jmpsAndNopsFromExercise1Path.stream()
                 .filter(index -> canReachTheEndWithFlippedNopOrJmp(input, index))
                 .findFirst().orElseThrow();
