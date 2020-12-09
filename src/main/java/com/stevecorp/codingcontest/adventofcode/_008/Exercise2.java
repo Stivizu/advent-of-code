@@ -32,12 +32,9 @@ public class Exercise2 {
                 .filter(index -> JMP_OR_NOP.contains(input.get(index)[0]))
                 .sorted(Comparator.reverseOrder())
                 .collect(Collectors.toList());
-        System.out.println("Indexes of JMP and NOP operations from exercise 1 (reverse numerically sorted): " + jmpsAndNopsFromExercise1Path);
         final Integer indexToFlip = jmpsAndNopsFromExercise1Path.stream()
                 .filter(index -> canReachTheEndWithFlippedNopOrJmp(input, index))
                 .findFirst().orElseThrow();
-        final Integer[] elementToFlip = input.get(indexToFlip);
-        System.out.println("Element to flip (at index " + indexToFlip + "): " + elementToFlip[0] + ", " + elementToFlip[1]);
         calculateAccumulatorValue(input, indexToFlip);
     }
 
