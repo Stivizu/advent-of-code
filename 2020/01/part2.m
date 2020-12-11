@@ -1,13 +1,6 @@
-I = load('input.txt');
-A = I + I';
-M = I * I';
+load input.txt;
 
-for i = 1:length(I)
-  AS(:, :, i) = I(i) + A;
-endfor
+P = nchoosek(input, 3);
+S = prod(P(sum(P, 2) == 2020, :));
 
-for i = 1:length(I)
-  MS(:, :, i) = I(i) * M;
-endfor
-
-sprintf("%.0f", MS(AS == 2020)(1, 1))
+sprintf('%.0f', S)
