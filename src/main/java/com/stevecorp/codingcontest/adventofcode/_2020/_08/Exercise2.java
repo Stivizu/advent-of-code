@@ -1,4 +1,4 @@
-package com.stevecorp.codingcontest.adventofcode._008;
+package com.stevecorp.codingcontest.adventofcode._2020._08;
 
 import java.util.Comparator;
 import java.util.HashSet;
@@ -7,7 +7,7 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import static com.stevecorp.codingcontest.adventofcode._008.Exercise1.exercise1;
+import static com.stevecorp.codingcontest.adventofcode._2020._08.Exercise1.exercise1;
 import static com.stevecorp.codingcontest.adventofcode.common.InputReader.parseFile;
 
 public class Exercise2 {
@@ -27,7 +27,7 @@ public class Exercise2 {
     };
 
     public static void main(final String... args) {
-        final List<Integer[]> input = parseFile("challenges/008/input.txt", MAPPER);
+        final List<Integer[]> input = parseFile("2020/08/input.txt", MAPPER);
         final List<Integer> jmpsAndNopsFromExercise1Path = exercise1(input, false).stream()
                 .filter(index -> JMP_OR_NOP.contains(input.get(index)[0]))
                 .sorted(Comparator.reverseOrder())

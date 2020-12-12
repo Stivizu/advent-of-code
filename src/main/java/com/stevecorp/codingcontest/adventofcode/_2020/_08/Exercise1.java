@@ -1,4 +1,4 @@
-package com.stevecorp.codingcontest.adventofcode._008;
+package com.stevecorp.codingcontest.adventofcode._2020._08;
 
 import java.util.HashSet;
 import java.util.List;
@@ -21,7 +21,7 @@ public class Exercise1 {
     };
 
     public static void main(final String... args) {
-        exercise1(parseFile("challenges/008/input.txt", MAPPER), true);
+        exercise1(parseFile("2020/08/input.txt", MAPPER), true);
     }
 
     public static Set<Integer> exercise1(final List<Integer[]> input, final boolean printAccumulatorValue) {
