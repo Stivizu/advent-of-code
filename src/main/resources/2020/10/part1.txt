@@ -42,6 +42,7 @@ The only adapter that works with the 7-jolt rated adapter is the one rated 10 jo
 From 10, the choices are 11 or 12; choose 11 (difference of 1) and then 12 (difference of 1).
 After 12, only valid adapter has a rating of 15 (difference of 3), then 16 (difference of 1), then 19 (difference of 3).
 Finally, your device's built-in adapter is always 3 higher than the highest adapter, so its rating is 22 jolts (always a difference of 3).
+
 In this example, when using every adapter, there are 7 differences of 1 jolt and 5 differences of 3 jolts.
 
 Here is a larger example:
