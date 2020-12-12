@@ -1,4 +1,4 @@
-package com.stevecorp.codingcontest.adventofcode._009;
+package com.stevecorp.codingcontest.adventofcode._2020._09;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -11,7 +11,8 @@ import static com.stevecorp.codingcontest.adventofcode.common.InputReader.parseF
 public class Exercise1 {
 
     public static void main(final String... args) {
-        System.out.println("First illegal number: " + exercise1(parseFile("challenges/009/input.txt", Long::parseLong)));
+        final long firstIllegalNumber = exercise1(parseFile("2020/09/input.txt", Long::parseLong));
+        System.out.println("The first illegal number is: " + firstIllegalNumber);
     }
 
     public static long exercise1(final List<Long> input) {

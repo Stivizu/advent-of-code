@@ -7,6 +7,6 @@ import static com.stevecorp.codingcontest.adventofcode.common.InputReader.parseF
 public class Exercise2 {
 
     public static void main(final String... args) {
-        final List<Long> input = parseFile("challenges/009/input.txt", Long::parseLong);
+        final List<Long> input = parseFile("2020/09/input.txt", Long::parseLong);
     }
 }
