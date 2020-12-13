@@ -31,6 +31,7 @@ public class Exercise1 {
         }
 
         final int solution = earliestTakeableBus * (earliestDepartureTime - availableTime);
-        System.out.println(solution);
+
+        System.out.println("The id of the earliest bus is: " + solution);
     }
 }

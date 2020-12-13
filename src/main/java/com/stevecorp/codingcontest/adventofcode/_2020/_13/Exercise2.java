@@ -1,50 +1,39 @@
 package com.stevecorp.codingcontest.adventofcode._2020._13;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import static com.stevecorp.codingcontest.adventofcode.common.InputReader.parseFile;
 import static com.stevecorp.codingcontest.adventofcode.common.InputReader.parseFileRaw;
 
 public class Exercise2 {
 
     public static void main(final String... args) {
-//        final List<String> input = parseFileRaw("2020/13/input.txt");
+        final List<String> rawInput = parseFileRaw("2020/13/input.txt");
+        final String[] timeTable = rawInput.get(1).split(",");
+        final List<Long[]> busInput = IntStream.range(0, timeTable.length)
+                .filter(busInputIndex -> !timeTable[busInputIndex].equals("x"))
+                .mapToObj(busInputIndex -> new Long[] {(long) busInputIndex, Long.parseLong(timeTable[busInputIndex])})
+                .collect(Collectors.toList());
 
-        // a, m
-        final List<Long[]> input = List.of(
-                new Long[] {0L, 7L},
-                new Long[] {1L, 13L},
-                new Long[] {4L, 59L},
-                new Long[] {6L, 31L},
-                new Long[] {7L, 19L}
-        );
-
-        final long m = input.stream()
+        final long smallestCommonDenominator = busInput.stream()
                 .mapToLong(inputElement -> inputElement[1])
                 .reduce(1, (a, b) -> a * b);
 
-        final Long[] z = new Long[input.size()];
-        IntStream.range(0, input.size())
-                .forEach(inputIndex -> z[inputIndex] = m / input.get(inputIndex)[1]);
+        final Long[] z = new Long[busInput.size()];
+        final Long[] y = new Long[busInput.size()];
+        final Long[] w = new Long[busInput.size()];
 
-        final Long[] y = new Long[input.size()];
-        IntStream.range(0, input.size())
-                .forEach(inputIndex -> y[inputIndex] = modularInverse(z[inputIndex], input.get(inputIndex)[1]));
+        final long chineseRemainderTheoremValue = IntStream.range(0, busInput.size())
+                .peek(inputIndex -> z[inputIndex] = smallestCommonDenominator / busInput.get(inputIndex)[1])
+                .peek(inputIndex -> y[inputIndex] = modularInverse(z[inputIndex], busInput.get(inputIndex)[1]))
+                .peek(inputIndex -> w[inputIndex] = y[inputIndex] * z[inputIndex])
+                .mapToLong(inputIndex -> busInput.get(inputIndex)[0] * w[inputIndex])
+                .sum() % smallestCommonDenominator;
 
-        final Long[] w = new Long[input.size()];
-        IntStream.range(0, input.size())
-                .forEach(inputIndex -> w[inputIndex] = y[inputIndex] * z[inputIndex]);
+        final long solution = smallestCommonDenominator - chineseRemainderTheoremValue;
 
-        final long solution = IntStream.range(0, input.size())
-                .mapToLong(inputIndex -> input.get(inputIndex)[0] * w[inputIndex])
-                .sum() % m;
-
-        System.out.println(solution);
+        System.out.println("The earliest timestamp is: " + solution);
     }
 
     private static long modularInverse(final long number, final long mod) {
