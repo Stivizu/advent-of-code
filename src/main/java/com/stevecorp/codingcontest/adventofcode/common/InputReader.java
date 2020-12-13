@@ -30,4 +30,12 @@ public class InputReader {
             throw new RuntimeException(e);
         }
     }
+
+    public static List<String> parseFileRaw(final String inputFilePath) {
+        try {
+            return Files.readAllLines(Paths.get(InputReader.class.getClassLoader().getResource(inputFilePath).toURI()));
+        } catch (final Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
