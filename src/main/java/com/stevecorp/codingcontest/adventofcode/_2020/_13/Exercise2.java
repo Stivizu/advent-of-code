@@ -8,7 +8,6 @@ import static com.stevecorp.codingcontest.adventofcode.common.InputReader.parseF
 
 public class Exercise2 {
 
-    // http://homepages.math.uic.edu/~leon/mcs425-s08/handouts/chinese_remainder.pdf
     public static void main(final String... args) {
         final List<String> rawInput = parseFileRaw("2020/13/input.txt");
         final String[] timeTable = rawInput.get(1).split(",");
