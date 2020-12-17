@@ -67,9 +67,6 @@ public class Exercise2 {
             for (int z = baseZ - 1; z <= baseZ + 1; z++) {
                 for (int y = baseY - 1; y <= baseY + 1; y++) {
                     for (int x = baseX - 1; x <= baseX + 1; x++) {
-                        if (baseX == 7 && baseY == 6 && baseZ == 6 && x == 7 && y == 6 && z == 6) {
-                            System.out.println();
-                        }
                         if (x > 0 && x < tesseract.length
                                 && y > 0 && y < tesseract[0].length
                                 && z > 0 && z < tesseract[0][0].length
