@@ -1,18 +1,11 @@
 package com.stevecorp.codingcontest.adventofcode._2020._22;
 
-import java.util.Arrays;
 import java.util.Comparator;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import static com.stevecorp.codingcontest.adventofcode.common.InputReader.parseFile;
 import static com.stevecorp.codingcontest.adventofcode.common.InputReader.parseFileRaw;
 
 public class Exercise1 {

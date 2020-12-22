@@ -1,13 +1,11 @@
 package com.stevecorp.codingcontest.adventofcode._2020._22;
 
-import java.util.Comparator;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 import static com.stevecorp.codingcontest.adventofcode.common.InputReader.parseFileRaw;
 
@@ -52,15 +50,16 @@ public class Exercise2 {
                     ? game(new LinkedList<>(playerCards.subList(0, playerCard)), new LinkedList<>(opponentCards.subList(0, opponentCard)))
                     : playerCard > opponentCard;
 
-            final LinkedList<Integer> targetDeck = playerWin ? playerCards : opponentCards;
-            final List<Integer> ordered = List.of(playerCard, opponentCard).stream()
-                    .sorted(Comparator.reverseOrder())
-                    .collect(Collectors.toList());
-            targetDeck.addLast(ordered.get(0));
-            targetDeck.addLast(ordered.get(1));
+            if (playerWin) {
+                playerCards.addLast(playerCard);
+                playerCards.addLast(opponentCard);
+            } else {
+                opponentCards.addLast(opponentCard);
+                opponentCards.addLast(playerCard);
+            }
 
         }
 
-        return !opponentCards.isEmpty();
+        return !playerCards.isEmpty();
     }
 }
